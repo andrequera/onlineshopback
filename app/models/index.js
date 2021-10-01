@@ -11,6 +11,8 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     min: dbConfig.pool.min,
     acquire: dbConfig.pool.acquire,
     idle: dbConfig.pool.idle
+  }, define:{
+    timestamps: false
   }
 });
 
@@ -19,6 +21,7 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-
+db.categorys = require("./category.model.js")(sequelize, Sequelize);
+db.products= require("./product.model.js")(sequelize, Sequelize);
 
 module.exports = db;
