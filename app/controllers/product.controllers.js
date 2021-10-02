@@ -5,8 +5,8 @@ const Product = db.products;
 const Op = db.Sequelize.Op;
 
 exports.findAll = (req, res) => {
-    const nombre = req.query.nombre;
-    var condition = nombre ? { name: { [Op.like]: `%${nombre}%` } } : null;
+    const name = req.query.name;
+    var condition = name ? { name: { [Op.like]: `%${name}%` } } : null;
 
     Product.findAll({ where: condition })
         .then(data => {
@@ -24,7 +24,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Tutorial.findByPk(id)
+    Product.findByPk(id)
         .then(data => {
             res.send(data);
         })
@@ -37,7 +37,8 @@ exports.findOne = (req, res) => {
 };
 
 exports.findAllPublished = (req, res) => {
-    Product.findAll({ where: { nombre: true } })
+
+    Product.findAll({ where: { published: true } })
         .then(data => {
             res.send(data);
         })
