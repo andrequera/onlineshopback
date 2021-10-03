@@ -5,7 +5,8 @@ const app = express();
 
 var allowedDomains = [
   "http://localhost:3000",
-  "https://fierce-island-50875.herokuapp.com/",
+  "https://onlineshopfront.vercel.app",
+
   
 ];
 app.use(
