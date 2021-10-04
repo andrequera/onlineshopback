@@ -3,11 +3,10 @@ const cors = require("cors");
 
 const app = express();
 
+//dando los permisos a vercel para front
 var allowedDomains = [
   "http://localhost:3000",
-  "https://onlineshopfront.vercel.app",
-
-  
+  "https://onlineshopfront.vercel.app", 
 ];
 app.use(
   cors({
