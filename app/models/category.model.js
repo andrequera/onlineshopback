@@ -1,16 +1,14 @@
 module.exports = (sequelize, Sequelize) => {
-    const Category = sequelize.define("category", {
-      name: {
-        type: Sequelize.STRING
-      },
-      
-    },{
-        freezeTableName: true
+  const Category = sequelize.define("category", {
+    name: {
+      type: Sequelize.STRING
+    },
+  }
+    , {
+      freezeTableName: true
     }
-    
-    );
-  
-    return Category;
-  };
+  );
 
-  
+  return Category;
+};
+

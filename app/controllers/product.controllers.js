@@ -1,7 +1,6 @@
 const db = require("../models");
 const Category = db.categorys;
 const Product = db.products;
-
 const Op = db.Sequelize.Op;
 
 exports.findAll = (req, res) => {
@@ -19,7 +18,6 @@ exports.findAll = (req, res) => {
             });
         });
 };
-
 
 exports.findOne = (req, res) => {
     const id = req.params.id;
