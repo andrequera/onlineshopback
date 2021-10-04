@@ -3,7 +3,6 @@ const Category = db.categorys;
 const Product = db.products;
 const Op = db.Sequelize.Op;
 
-
 exports.findAll = (req, res) => {
     console.log('prueba')
        
@@ -34,8 +33,6 @@ exports.findOne = (req, res) => {
 
 };
 
-
-
 exports.findAllPublished = (req, res) => {
     Category.findAll({ where: { nombre: true } })
         .then(data => {
@@ -47,5 +44,4 @@ exports.findAllPublished = (req, res) => {
                     err.message || "Some error occurred while retrieving tutorials."
             });
         });
-
 };
