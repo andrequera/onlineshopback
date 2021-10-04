@@ -33,12 +33,11 @@ exports.findOne = (req, res) => {
                 message: "Error retrieving Tutorial with id=" + id
             });
         });
-
 };
 
-exports.findAllPublished = (req, res) => {
-
-    Product.findAll({ where: { published: true } })
+exports.findByCategorys = (req, res) => {
+// params por numeros.
+    Product.findAll({ where: { category: req.params.id } })
         .then(data => {
             res.send(data);
         })
@@ -48,5 +47,4 @@ exports.findAllPublished = (req, res) => {
                     err.message || "Some error occurred while retrieving tutorials."
             });
         });
-
 };
